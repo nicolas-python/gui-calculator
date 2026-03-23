@@ -6,27 +6,30 @@ import tkinter            #tkinter-modul=die Standardbibliothek für GUI-Program
 root = tkinter.Tk()                      #root= fenster   #Tk() ist eine Funktion aus dem Modul tkinter
 root.title("Taschenrechner")
 
+entry = tkinter.Entry(root)             #entry=das gui feld insert=text schreiben
+entry.pack()
+
 #Knöpfe Erstellen und platzieren
 def button_1():
-    print("Knopf 1")
+    entry.insert("end", "1")
 def button_2():
-    print("Knopf 2")
+    entry.insert("end", "2")
 def button_3():
-    print("Knopf 3")
+    entry.insert("end", "3")
 def button_4():
-    print("Knopf 4")
+    entry.insert("end", "4")
 def button_5():
-    print("Knopf 5")
+    entry.insert("end", "5")
 def button_6():
-    print("Knopf 6")
+    entry.insert("end", "6")
 def button_7():
-    print("Knopf 7")
+    entry.insert("end", "7")
 def button_8():
-    print("Knopf 8")
+    entry.insert("end", "8")
 def button_9():
-    print("Knopf 9")
+    entry.insert("end", "9")
 def button_0():
-    print("Knopf 0")
+    entry.insert("end", "0")
 
 buttons = []
 
