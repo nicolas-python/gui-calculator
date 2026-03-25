@@ -55,7 +55,14 @@ class calculation_methods:
         self.entry.insert("end", "/")
 
 
-# fenster erstellen/öffnen
+    def calculate(self):
+        result = eval(self.entry.get())  # eval rechnet den text
+        self.entry.delete(0, "end")  # entry = speichern als text ""
+        self.entry.insert(0, str(result))
+
+
+# fen
+# ster erstellen/öffnen
 root = tkinter.Tk()                 # root= fenster   #Tk() ist eine Funktion aus dem Modul tkinter
 root.title("Taschenrechner")
 
@@ -102,10 +109,7 @@ buttons.append(buttondivision)
 
 #anzeigen der knöpfe
 for b in buttons:
-    b.pack()                        #pack zeigt den Knopf im fenster an und platziert ihn/pack nur für einzelne Widgets
-
-
-#def calculate():
+    b.pack()           #pack zeigt den Knopf im fenster an und platziert ihn/pack nur für einzelne Widgets
 
 
 #def clear():
