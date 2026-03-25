@@ -51,6 +51,9 @@ class calculation_methods:
         self.entry.insert("end", "*")
     def button_division(self):
         self.entry.insert("end", "/")
+    def clear(self):
+        self.entry.delete(0, "end")
+
 
     def calculate(self):
         result = eval(self.entry.get())  # eval rechnet den text
@@ -87,6 +90,7 @@ buttonmultiplication = tkinter.Button(root, text="*", command=cal_methods.button
 buttondivision = tkinter.Button(root, text="/", command=cal_methods.button_division)
 
 button_equals = tkinter.Button(root, text="=", command=cal_methods.calculate)  #Button für Berechnung =
+button_clear = tkinter.Button(root, text="C", command=cal_methods.clear)     #löschen nach rechnung
 
 buttons.append(button1)
 buttons.append(button2)
@@ -104,13 +108,10 @@ buttons.append(buttonsubtraction)
 buttons.append(buttonmultiplication)
 buttons.append(buttondivision)
 buttons.append(button_equals)
-
+buttons.append(button_clear)
 
 #anzeigen der knöpfe
 for b in buttons:
     b.pack()           #pack zeigt den Knopf im fenster an und platziert ihn/pack nur für einzelne Widgets
-
-
-#def clear():
 
 root.mainloop()
