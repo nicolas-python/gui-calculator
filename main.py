@@ -42,18 +42,15 @@ class calculation_methods:
     def button_0(self):
         self.entry.insert("end", "0")
 
+
     def button_addition(self):
         self.entry.insert("end", "+")
-
     def button_subtraction(self):
         self.entry.insert("end", "-")
-
     def button_multiplication(self):
         self.entry.insert("end", "*")
-
     def button_division(self):
         self.entry.insert("end", "/")
-
 
     def calculate(self):
         result = eval(self.entry.get())  # eval rechnet den text
@@ -61,8 +58,7 @@ class calculation_methods:
         self.entry.insert(0, str(result))
 
 
-# fen
-# ster erstellen/öffnen
+# fenster erstellen/öffnen
 root = tkinter.Tk()                 # root= fenster   #Tk() ist eine Funktion aus dem Modul tkinter
 root.title("Taschenrechner")
 
@@ -90,6 +86,8 @@ buttonsubtraction = tkinter.Button(root, text="-", command=cal_methods.button_su
 buttonmultiplication = tkinter.Button(root, text="*", command=cal_methods.button_multiplication)
 buttondivision = tkinter.Button(root, text="/", command=cal_methods.button_division)
 
+button_equals = tkinter.Button(root, text="=", command=cal_methods.calculate)  #Button für Berechnung =
+
 buttons.append(button1)
 buttons.append(button2)
 buttons.append(button3)
@@ -105,6 +103,7 @@ buttons.append(buttonaddition)
 buttons.append(buttonsubtraction)
 buttons.append(buttonmultiplication)
 buttons.append(buttondivision)
+buttons.append(button_equals)
 
 
 #anzeigen der knöpfe
