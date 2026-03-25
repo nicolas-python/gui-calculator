@@ -66,7 +66,7 @@ root = tkinter.Tk()                 # root= fenster   #Tk() ist eine Funktion au
 root.title("Taschenrechner")
 
 entry = tkinter.Entry(root)         # entry=das gui feld insert=text schreiben
-entry.pack()
+entry.grid()                        # grid() statt pack() beides geht nicht (grid da man da die knöpfe leichter anordnen kan)
 
 cal_methods = calculation_methods(entry)
 
@@ -92,26 +92,23 @@ buttondivision = tkinter.Button(root, text="/", command=cal_methods.button_divis
 button_equals = tkinter.Button(root, text="=", command=cal_methods.calculate)  #Button für Berechnung =
 button_clear = tkinter.Button(root, text="C", command=cal_methods.clear)     #löschen nach rechnung
 
-buttons.append(button1)
-buttons.append(button2)
-buttons.append(button3)
-buttons.append(button4)
-buttons.append(button5)
-buttons.append(button6)
-buttons.append(button7)
-buttons.append(button8)
-buttons.append(button9)
-buttons.append(button0)
 
-buttons.append(buttonaddition)
-buttons.append(buttonsubtraction)
-buttons.append(buttonmultiplication)
-buttons.append(buttondivision)
-buttons.append(button_equals)
-buttons.append(button_clear)
+button1.grid(row=3,column=0)            #grid = ordnet in Zeilen und Spalten an
+button2.grid(row=3,column=1)            #row= Zeilennummer
+button3.grid(row=3,column=2)            #column= spaltennummer
+button4.grid(row=2,column=0)
+button5.grid(row=2,column=1)
+button6.grid(row=2,column=2)
+button7.grid(row=1,column=0)
+button8.grid(row=1,column=1)
+button9.grid(row=1,column=2)
+button0.grid(row=4,column=1)
 
-#anzeigen der knöpfe
-for b in buttons:
-    b.pack()           #pack zeigt den Knopf im fenster an und platziert ihn/pack nur für einzelne Widgets
+buttonaddition.grid(row=1, column=3)
+buttonsubtraction.grid(row=2, column=3)
+buttonmultiplication.grid(row=3, column=3)
+buttondivision.grid(row=4, column=3)
+button_equals.grid(row=4, column=2)
+button_clear.grid(row=4, column=0)
 
 root.mainloop()
